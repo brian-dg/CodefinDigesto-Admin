@@ -14,6 +14,8 @@ import { ListItemIcon } from "@material-ui/core/";
 import { blue } from '@material-ui/core/colors';
 import { Alert, AlertTitle } from "@material-ui/lab";
 
+
+
 //Our Components
 import Title from "../../../components/Title";
 import ButtonConfirm from "../../../components/ButtonConfirm/ButtonConfirm";
@@ -139,6 +141,11 @@ const TiposNormativas: React.FC = () => {
                       <TableCell>{data.fechaAlta}</TableCell>
                       <TableCell>{data.horaAlta.substr(0, 5)}</TableCell>
                       <TableCell>
+
+
+                 
+
+
                         <Link
                           to={`/tiponormativas/${data.codigoNormativa}`}
                           className={classes.links}

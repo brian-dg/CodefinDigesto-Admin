@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { useStylesForm } from "./styles";
+import { useParams,Link } from "react-router-dom";
+import { useStylesForm,useStyles } from "./styles";
 import {
   TextField,
   Button,
@@ -32,7 +32,7 @@ const EditTipoNormativa: React.FC<RouteComponentProps> = ({ history }) => {
   const[error, setError] = useState("");
 
   const classes = useStylesForm();
-
+  const classess = useStyles();
   //traer el parametro que se pasa en la url
   const { codigoNormativa } = useParams();
 
@@ -125,6 +125,9 @@ const EditTipoNormativa: React.FC<RouteComponentProps> = ({ history }) => {
               description="Esta seguro que desea guardar los cambios?"
               onConfirm={handleSubmit}
             />
+            
+            <Link
+                          to={`/tiponormativas`} className={classess.links}>
             <Button
               variant="contained"
               color="secondary"
@@ -133,6 +136,8 @@ const EditTipoNormativa: React.FC<RouteComponentProps> = ({ history }) => {
             >
               Cancelar
             </Button>
+            </Link>
+            
           </>
         )}
       </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useStylesForm } from "./styles";
+import { useStylesForm,useStyles } from "./styles";
+import { Link } from "react-router-dom";
 import {
   TextField,
   Button,
@@ -30,7 +31,7 @@ const NewTipoNormativa: React.FC<RouteComponentProps> = ({ history }) => {
   const [error, setError] = useState("");
   const [errorTitle, setErrorTitle] = useState("");
  
-
+  const classess = useStyles();
   const classes = useStylesForm();
 
   //enviar lo que hay en el state
@@ -110,6 +111,7 @@ const NewTipoNormativa: React.FC<RouteComponentProps> = ({ history }) => {
             onConfirm={handleSubmit}
             disabled={validation()}
           />
+        <Link to={`/tiponormativas`} className={classess.links}>
           <Button
             variant="contained"
             color="secondary"
@@ -118,6 +120,9 @@ const NewTipoNormativa: React.FC<RouteComponentProps> = ({ history }) => {
           >
             Cancelar
           </Button>
+
+        </Link>
+
         </div>
       </div>
     </form>
